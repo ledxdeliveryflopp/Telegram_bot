@@ -12,6 +12,7 @@ aiogram = "^3.10.0"
 sqlalchemy = "^2.0.31"
 psycopg2-binary = "^2.9.9"
 pre-commit = "^3.7.1"
+pydantic-settings = "^2.3.4"
 
 
 [build-system]
