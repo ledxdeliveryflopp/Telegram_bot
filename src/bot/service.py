@@ -17,8 +17,7 @@ class BotService:
     @staticmethod
     @dispatcher.message(Command("start"))
     async def start_message(message: Message) -> Message:
-        chat_id = message.chat.id
-        await bot.send_message(chat_id=chat_id, text="ну привет")
+        await bot.send_message(chat_id=message.chat.id, text="ну привет")
 
     @staticmethod
     @dispatcher.message(Command("subscribe"))
