@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+
+  database:
+    image: postgres
+    container_name: database
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - database:/data/
+    ports:
+      - "5432:5432"
+    networks:
+      - sql
+
+  bot:
+    container_name: bot
+    build:
+      ./
+    command: python main.py
+    ports:
+      - "7000:7000"
+    networks:
+      - sql
+
+networks:
+  sql:
+    external: true
+
+volumes:
+  database:
