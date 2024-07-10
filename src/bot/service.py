@@ -52,6 +52,7 @@ class BotService:
         data = data.get("message_text")
         if data == "Выход":
             await bot.send_message(chat_id=message.chat.id, text="Отправка отменена")
+            await state.clear()
             return False
         user_service = UserService()
         users = await user_service.get_all_users()
