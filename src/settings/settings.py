@@ -13,16 +13,16 @@ class DatabaseSettings(BaseSettings):
     """Настройки бота"""
 
     user: str
-    password: str
+    postgres_password: str
     host: str
     port: str
-    name: str
+    database_name: str
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     @property
     def get_full_db(self):
-        return f'postgresql+asyncpg://{self.user}:{self.password}@{self.host}:{self.port}/{self.name}'
+        return f'postgresql+asyncpg://{self.user}:{self.postgres_password}@{self.host}:{self.port}/{self.database_name}'
 
 
 class Settings(BaseSettings):

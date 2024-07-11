@@ -7,5 +7,5 @@ from src.settings.settings import settings
 
 dispatcher = Dispatcher(storage=MemoryStorage())
 
-bot = Bot(token=settings.bot_settings.bot_token,
+bot = Bot(token=settings.bot_settings.token,
           default=DefaultBotProperties(parse_mode=ParseMode.HTML))
